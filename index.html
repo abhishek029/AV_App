@@ -11,13 +11,16 @@
 <body>
     <main id="app">
         <h4 class="welcome-message"> {{ sectionTitle }}</h4>
+        
         <ul>
-            <h5>{{movietitle}}</h5>
-            <label>{{moviedescription}}</label>
-            <label>{{movielength}}</label>
-        </ul>
-
-       
+            <li v-for="movie in moviedata">
+                <!-- heading image length and description is coming from parent table of database-->
+                <h3>{{ movie.parent_movie_title }}</h3>
+                <img :src="'images/'+movie.parent_movie_thumb" alt="parentthumb">
+                <p>{{movie.parent_movie_desc}}</p>            
+                <label>Lenght : {{movie.parent_movie_length}}</label>
+        </li>
+        </ul>    
 
        
    
