@@ -17,14 +17,14 @@
 
         created : function() {
             console.log("fetch all movies called");
-            fetchMoviesInfo();
+            this.fetchAllMovies();
             
         },
 
         methods : {
 
             //get all movie record
-            fetchMoviesInfo() {
+            fetchAllMovies() {
          
                 console.log("fetch function");
                 
