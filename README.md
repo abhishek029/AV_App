@@ -1,6 +1,12 @@
-# Purevolume.com redesign
+# ROKU redesign
 
-A two page site redesign of Purevolume.com. The article redesigned for style.
+
+## Description
+Designed three pages for Roku app(Home, Parent and Kids).
+Database is created and data is coming from .php files.
+Images are used as thumbnails for playing video.
+Data is filled in html page for images and its information.
+
 
 ## Built With
 
@@ -10,11 +16,6 @@ A two page site redesign of Purevolume.com. The article redesigned for style.
 * [Gulp]
 * [PHP]
 
-## Description
-Designed three pages for Roku app(Home, Parent and Kids).
-Database is created and data is coming from .php files.
-Images are used as thumbnails for playing video.
-Data is filled in html page for images and its information.
 
 ## Development Team
 
