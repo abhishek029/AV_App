@@ -14,7 +14,7 @@
 <body>
     <main id="app">
      
-        <h4 class="welcome-message columns small-12 text-center"> {{ sectionTitle }}</h4>
+        <h4 class="welcome-message columns small-12 text-center"> {{ parentTitle }}</h4>
         
         <ul class="row">
             <!-- done for parent and same as kids -->
@@ -32,7 +32,28 @@
                <!-- uncomment below line to see its playing -->
                 <!-- <video autoplay :src="'video/'+movie.parent_movie_video"> </video> -->
         </li>
-        </ul>    
+        </ul> 
+        
+        <h4 class="welcome-message columns small-12 text-center"> {{ kidsTitle }}</h4>
+        
+        <ul class="row">
+            <!-- done for parent and same as kids -->
+            <li class="columns small-12" v-for="movie in kidsmoviedata">
+                <!-- heading image length and description is coming from parent table of database-->
+                {{kidsmoviedata}}
+                <div class="columns small-4">
+                    <img class="columns small-12" :src="'images/'+movie.kids_movie_thumb" alt="kidsthumb">
+                </div>
+                <div class="columns small-8">
+                    <h3>{{movie.kids_movie_title}}</h3>
+                    <p>{{movie.kids_movie_desc}}</p>
+                    <label class="columns small-12">Lenght : {{movie.kids_movie_length}}</label>
+                </div>
+               <!-- just make this video display when user clicks on thumbnail in loghtbox -->
+               <!-- uncomment below line to see its playing -->
+                <!-- <video autoplay :src="'video/'+movie.parent_movie_video"> </video> -->
+        </li>
+        </ul>
 
        
    

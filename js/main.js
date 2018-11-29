@@ -3,15 +3,17 @@
         el: '#app',
 
         data: {
-            sectionTitle : "Parent Section",
-            moviedata : [],            
+            parentTitle : "Parent Section",
+            kidsTitle : "kids Section",
+            moviedata : [],    
+            kidsmoviedata : [],        
 
-            movieid : "01",
-            movietitle : "title",
-            moviedescription : "description",
-            movielength : "00:00:00",
-            moviethumb : "image.jpg",
-            movievideo : "video.mp4"
+            // movieid : "01",
+            // movietitle : "title",
+            // moviedescription : "description",
+            // movielength : "00:00:00",
+            // moviethumb : "image.jpg",
+             movievideo : "video.mp4"
 
         },
 
@@ -35,12 +37,15 @@
                         //const {parentId, parentTitle, parentDesc, parentLength, parentThumb, parentVideo} = data[0];
                         console.log("all data came");
                         console.log(data);
-                        this.moviedata = data;
+                        this.moviedata = data[0];
+                        this.kidsmoviedata = data[1];
                     
                 })
                 .catch(function(error) {
                     console.log(error);
                 });
+
+              
             }
         }
     });
