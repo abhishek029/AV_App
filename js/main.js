@@ -36,7 +36,7 @@
                        
                         //const {parentId, parentTitle, parentDesc, parentLength, parentThumb, parentVideo} = data[0];
                         console.log("all data came");
-                        console.log([0]);
+                        console.log(data);
                         this.moviedata = data[0];
                         this.kidsmoviedata = data[1];
                     

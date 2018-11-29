@@ -42,9 +42,12 @@
                 <!-- heading image length and description is coming from parent table of database-->
                 {{kidsmoviedata}}
                 <div class="columns small-4">
-                    <img class="columns small-12" :src="'images/'+movie.parent_movie_thumb" alt="parentthumb">
+                    <img class="columns small-12" :src="'images/'+movie.kids_movie_thumb" alt="kidsthumb">
                 </div>
                 <div class="columns small-8">
+                    <h3>{{movie.kids_movie_title}}</h3>
+                    <p>{{movie.kids_movie_desc}}</p>
+                    <label class="columns small-12">Lenght : {{movie.kids_movie_length}}</label>
                 </div>
                <!-- just make this video display when user clicks on thumbnail in loghtbox -->
                <!-- uncomment below line to see its playing -->
