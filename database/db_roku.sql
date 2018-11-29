@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 27, 2018 at 12:36 AM
+-- Generation Time: Nov 29, 2018 at 05:17 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -73,15 +73,16 @@ CREATE TABLE IF NOT EXISTS `tbl_parent` (
   `parent_movie_thumb` varchar(150) NOT NULL,
   `parent_movie_video` varchar(150) NOT NULL,
   PRIMARY KEY (`parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_parent`
 --
 
 INSERT INTO `tbl_parent` (`parent_id`, `parent_movie_title`, `parent_movie_desc`, `parent_movie_length`, `parent_movie_thumb`, `parent_movie_video`) VALUES
-(1, 'Test1', 'Testing1 description', '1:58:00', 'test1.jpg', 'test1.mp4'),
-(2, 'Test2', 'Testing2 description', '2:01:19', 'Test2.jpg', 'Test2.mp4');
+(1, 'Parent Movie Title1', 'Parent Description', '1:58:00', 'test1.jpg', 'test1.mp4'),
+(2, 'Parent Movie Title 2', 'Parent Description 2', '2:01:19', 'Test2.jpg', 'Test2.mp4'),
+(3, 'Testing3', 'Parent Description 3', '5:00', 'test1.jpg', 'test.mp4');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
