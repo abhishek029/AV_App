@@ -14,7 +14,7 @@
 <body>
     <main id="app">
      
-        <h4 class="welcome-message columns small-12 text-center"> {{ parentTitle }}</h4>
+        <h2 class="welcome-message columns small-12 text-center"> {{ parentTitle }}</h2>
         
         <ul class="row">
             <!-- done for parent and same as kids -->
@@ -34,13 +34,13 @@
         </li>
         </ul> 
         
-        <h4 class="welcome-message columns small-12 text-center"> {{ kidsTitle }}</h4>
+        <h2 class="welcome-message columns small-12 text-center"> {{ kidsTitle }}</h2>
         
         <ul class="row">
             <!-- done for parent and same as kids -->
             <li class="columns small-12" v-for="movie in kidsmoviedata">
                 <!-- heading image length and description is coming from parent table of database-->
-                {{kidsmoviedata}}
+                <!-- {{kidsmoviedata}} -->
                 <div class="columns small-4">
                     <img class="columns small-12" :src="'images/'+movie.kids_movie_thumb" alt="kidsthumb">
                 </div>
