@@ -8,12 +8,7 @@
             moviedata : [],    
             kidsmoviedata : [],        
 
-            // movieid : "01",
-            // movietitle : "title",
-            // moviedescription : "description",
-            // movielength : "00:00:00",
-            // moviethumb : "image.jpg",
-             movievideo : "video.mp4"
+       
 
         },
 
