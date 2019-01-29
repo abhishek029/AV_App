@@ -1,2 +1,55 @@
-footer{color:red}
-/*# sourceMappingURL=main.css.map */
+body{
+    background:black;
+    color: white;
+}
+
+#search{
+    background: rgb(228, 64, 119);
+    border-radius: 4px;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+}
+.logo{
+    color: rgb(228, 64, 119);
+    font-weight: bold;
+    font-size: 80px;
+}
+
+header ul li a{
+    color: white;
+}
+
+header ul li a:hover{
+    color: rgb(228, 64, 119);
+}
+
+#promoImage img{
+    height: 500px;
+}
+
+/* IN THEATER */
+.headType{
+    color: white;
+}
+.movieName{
+    color: white;
+    font-weight: bold;
+}
+.movieLength{
+    color: white;
+}
+
+/* parent */
+
+
+/* login page */
+.commonStyle{
+    color: white;
+    background: rgb(228, 64, 119);
+}
+.button:hover{
+    background-color: rgb(252, 112, 159);
+}
