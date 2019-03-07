@@ -1,12 +1,12 @@
 <?php
-    $user = "root";
-    $pw = "";
+    $users = "root";
+    $pw = "root";
 
-    try {
-        $conn = new PDO('mysql:host=localhost;dbname=db_roku', $user, $pw);
-        //echo "connection created";
-        //var_dump($conn);
-    } catch(PDOException $exception) {
-        echo 'connect error!' . $exception->getMessage();
+    try{
+        $conn = new PDO("mysql:host=localhost;dbname=testusers", $users, $pw);
+        // var_dump($conn);
+    }catch(PDOException $exception){
+        echo 'connection error! ' . $exception->getMessage();
     }
+
 ?>
