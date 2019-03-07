@@ -1,33 +1,46 @@
 <?php
-include 'connect.php';
+    include 'connect.php';
 
+    function validate_login($pdo, $user, $password){
+        $query = "select * from users where first_name='$user'";
 
+        $get_user = $pdo->query($query);
+        $results = array();
 
-function get_all_movies($pdo) {
-    $query = "SELECT * FROM tbl_parent";
+        while($row = $get_user->fetch(PDO::FETCH_ASSOC)){
+            if($row['password'] == $password){
+                $row['password'] = 'XXX';
+                $results[] = $row;
+            }else{
+                $results[] = "false";
+            }
+        }
 
-    $get_movie = $pdo->query($query);
-    $results = array();
+        return $results;
+    }
+    
+    function get_single_users($pdo, $user){
+        $query = "select * from users where id='$user'";
 
-    while($row = $get_movie->fetch(PDO::FETCH_ASSOC)) {
-        $results[] = $row;
+        $get_user = $pdo->query($query);
+        $results = array();
+
+        while($row = $get_user->fetch(PDO::FETCH_ASSOC)){
+            $results[] = $row;
+        }
+
+        return $results;
     }
 
-    return $results;
-}
+    function get_all_users($pdo){
+        $query = "select * from users";
 
-function get_all_kids_movies($pdo) {
-    $query = "SELECT * FROM tbl_kids";
-
-    $get_movie = $pdo->query($query);
-    $results = array();
-
-    while($row = $get_movie->fetch(PDO::FETCH_ASSOC)) {
-        $results[] = $row;
+        $get_user = $pdo->query($query);
+        $results = array();
+        while($row = $get_user->fetch(PDO::FETCH_ASSOC)){
+            $results[] = $row;
+        }
+        
+        return $results;
     }
-
-    return $results;
-}
-
-
 ?>

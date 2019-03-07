@@ -1,47 +1,61 @@
-(()=> {
-    const vm = new Vue({
-        el: '#app',
+import LoginComponent from '../js/modules/LoginComponent.js';
+import UsersComponent from '../js/modules/UsersComponent.js';
+import UserHomeComponent from '../js/modules/UserHomeComponent.js';
+import ParentHomeComponent from '../js/modules/ParentHomeComponent.js';
+import KidsHomeComponent from '../js/modules/KidsHomeComponent.js';
 
-        data: {
-            parentTitle : "Parent Section",
-            kidsTitle : "kids Section",
-            moviedata : [],    
-            kidsmoviedata : [],        
+const routes = [
+    { path: '/', redirect:{name: 'login'}},
+    { path: '/login', name: 'login', component: LoginComponent},
+    { path: '/users', name: 'users', component: UsersComponent},
+    { path: '/usercomponent', name: 'home', component: UserHomeComponent },
+    { path: '/parentcomponent', name: 'parent', component: ParentHomeComponent },
+    { path: '/kidscomponent', name: 'kids', component: KidsHomeComponent }
+]
+const router = new VueRouter({
+    routes
+});
+// then your vue instance
 
-       
+const vm = new Vue({
+    data:{
+        testmessage: "sup",
 
-        },
+        authenticated: false,
 
-        created : function() {
-            console.log("fetch all movies called");
-            this.fetchAllMovies();
-            
-        },
-
-        methods : {
-
-            //get all movie record
-            fetchAllMovies() {
-         
-                console.log("fetch function");
-                
-                fetch(`./includes/index.php`) // pass in the one or many query
-                .then(res => res.json())
-                .then(data => {                   
-                       
-                        //const {parentId, parentTitle, parentDesc, parentLength, parentThumb, parentVideo} = data[0];
-                        console.log("all data came");
-                        console.log(data);
-                        this.moviedata = data[0];
-                        this.kidsmoviedata = data[1];
-                    
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
-
-              
-            }
+        mockAccount:{
+            username: "abc",
+            password: "123"
         }
-    });
-})();
+    },
+
+    methods:{
+        calledOnParent(){
+            console.log("This method lives in the main VM and wass cxalled a component");
+        },
+        setAuthenticated(status){
+            this.authenticated = status;
+        },
+        logout(){
+            this.$router.push({ path: "/login" });
+            this.authenticated = false;
+
+        }
+    },
+
+    created: function(){
+        console.log("Main Vue instance");
+    },
+
+    router:router
+}).$mount("#app");
+
+router.beforeEach((to, from, next)=>{
+    console.log('router guard fired');
+
+    if(vm.authenticated == false){
+        next("/login");
+    }else{
+        next();
+    }
+});
