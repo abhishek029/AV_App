@@ -2,15 +2,21 @@ export default{
     props: ['currentuser'],
 
     template:`
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>You're on the Parent's home page right now!</h1>
-                    
-                    <img :src="'../images/' + retriveMedia.movies_cover" alt="image">
-                </div>
+    <div class="container">
+            
+    <div class="row">            
+        <div class="col-sm-12">
+            <div>
+                <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer" class="fs-video col"></video>
             </div>
+            
+            <h1>You're on the Guest's home page and we don't have anything for you right now!</h1>
+                
+            <img v-for="media in retriveMedia" @click="switchMedia(media)" class="col-2" :src="'./images/video/' + media.movies_cover" alt="image">
         </div>
+    </div>
+</div>
+
     `,
 
     data(){
@@ -45,7 +51,7 @@ export default{
                 fetch(url)
                     .then(res => res.json())
                     .then(data => {
-                        this.retriveMedia = data[0];
+                        this.retriveMedia = data;
                         this.currentMediaDetails = data[0];
                     })
                     .catch(function(error){
