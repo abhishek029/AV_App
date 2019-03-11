@@ -68,6 +68,7 @@ export default{
                 
             }else{
                 console.log("username and password cannot be blank");
+                
             }
 
         }

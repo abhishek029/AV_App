@@ -1,20 +1,19 @@
 <?php 
 
-function getAll($tbl){
+function getAll($tbl,$filter){
 	include('connect.php');
 
 	//TODO: fill the following variable with a SQL query
 	// that fetching all info from the given table $tbl
-	$queryAll = 'SELECT * FROM '.$tbl;
+	$queryAll = 'SELECT * FROM '.$tbl.' WHERE movies_audience = "'.$filter.'"';
 
 	$runAll = $pdo->query($queryAll);
 
 	$result = array();
-
 	while($row = $runAll->fetch(PDO::FETCH_ASSOC)){
 		$result[] = $row;
-	}
 
+	}
 	return $result;
 }
 
