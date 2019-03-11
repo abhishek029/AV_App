@@ -112,20 +112,24 @@ header ul li a:hover{
     font-size: 14pt;
 }
 
+.singerName {
+    font-size: 12pt;
+    padding-top: -10px;
+}
 
     /* kid div */
 #kid{
     margin-left: 2%;
 }
 
-.singerName p{
-    font-size: 12pt;
-}
-
 /* Kid Home Page */
 
-.kid-thumbnails img{
-  
+#videoKid{
+    margin-bottom: 5%;
+}
+
+.kid-thumbnails{
+    margin: 0 auto
 }
 
 /* login page */
@@ -135,10 +139,11 @@ header ul li a:hover{
     margin-top:40px;
     padding-top:40px;
     padding-bottom:40px;
+    background-color: black;
 }
 
 #loginForm{
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 .loginInput {
@@ -150,16 +155,13 @@ header ul li a:hover{
     margin-top: 5%;
 }
 
-.loginInput p{
-    padding-left: 10%
-}
-
 #signIn {
     width: 100px;
     height: 40px;
     background-color: #d62957;
     font-size: 14pt;
     color: white;
+    margin-top:5%;
 }
 
 

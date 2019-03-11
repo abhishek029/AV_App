@@ -7,12 +7,14 @@ export default{
                     <!-- <h1>Admin Login</h1> -->
                     <form action="admin_login.php" method="POST">
                         <label>
-                            <input v-model="input.username" class="loginInput" type="text" name="username" value="" placeholder="Username" required>
+                            <input class="loginInput columns small-12" type="text" name="username" value="" placeholder="Username">
                         </label>
                         <label>
-                            <input v-model="input.password" class="loginInput" type="password" name="password" placeholder="Password" required>
+                            <input class="loginInput columns small-12" type="password" name="password" placeholder="Password">
                         </label>
-                            <button v-on:click.prevent="login()" type="submit">Sign In</button>                
+                        <div class="row">     
+                            <button class="columns medium-offset-5 large-offset-5 " type="submit" id="signIn">Sign In</button>                
+                        </div>        
                     </form>
                 </div>     
             </div>
