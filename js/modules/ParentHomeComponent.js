@@ -2,19 +2,19 @@ export default{
     props: ['currentuser'],
 
     template:`
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>You're on the Parent's home page right now!</h1>
-                    
-                    <img :src="'../images/' + retriveMedia.movies_cover" alt="image">
-                </div>
-            </div>
-        </div>
+    <div class="row">
+        <input class="columns small-12 large-10 large-offset-1" id="search" type="text" placeholder="search for a movie, tv show and music">
+    </div>
+
+<div>
+    <div id="banner">
+        <img :src="banner" class="columns large-offset-1 large-10 small-12 medium-12" >
+    </div>
     `,
 
     data(){
         return{
+            banner : 'images/banner.jpg',
             activeMediaType: "video",
 
             // push first and push it into an active media reference

@@ -12,3 +12,171 @@
 .fade-enter, .fade-leave{
     opacity: 0;
 }
+
+ body{
+    color: white;
+} 
+
+#search{
+    background: rgb(228, 64, 119);
+    border-radius: 4px;
+    padding-left: 2%;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+}
+.logo{
+    color: rgb(228, 64, 119);
+    font-weight: bold;
+    font-size: 80px;
+}
+header{
+    margin: 2% 2%;
+}
+
+header ul li a{
+    color: rgb(228, 64, 119);
+}
+
+header ul li a:hover{
+    font-weight: bold;
+    color: rgb(228, 64, 119);
+}
+
+/* Navigation */
+
+#main-menu{
+    position: -webkit-sticky;
+    position: sticky;
+    
+}
+
+#menu{
+    padding-top: 3%;
+}
+
+
+#promoImage img{
+    height: 500px;
+}
+
+/* Footer */
+#mainFooter{
+   background-color: #d62957;
+   padding: 3% 5%;
+   margin-top: 5%;
+}
+
+#logo-footer p{
+    padding-top: 20px;
+}
+
+#social-media img{
+    width:35px;
+    height: 35px;
+    margin-left: 8px;
+}
+
+/* Parent Page */
+
+#parentContainer {
+    background-color: black;
+    color: white;
+}
+    /* IN THEATER */
+.headType{
+    color: white;
+}
+.movieName{
+    color: white;
+    font-weight: bold;
+}
+.movieLength{
+    color: white;
+}
+
+.headingHomepage {
+    font-size: 20pt;
+    padding-left: 8%;
+    padding-top: 15%;
+}
+
+    /* parent div */ 
+#parent{
+    margin-left: 2%;
+}
+
+.movieName{
+    font-size: 14pt;
+}
+
+
+    /* kid div */
+#kid{
+    margin-left: 2%;
+}
+
+.singerName p{
+    font-size: 12pt;
+}
+
+/* Kid Home Page */
+
+.kid-thumbnails img{
+  
+}
+
+/* login page */
+#loginContainer {
+    width: 600px;
+    margin:0 auto;
+    margin-top:40px;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+#loginForm{
+    margin-top: 20%;
+}
+
+.loginInput {
+    width: 600px;
+    height: 50px;
+    background-color: #d62957;
+    font-size: 18pt;
+    padding-left: 5%;
+    margin-top: 5%;
+}
+
+.loginInput p{
+    padding-left: 10%
+}
+
+#signIn {
+    width: 100px;
+    height: 40px;
+    background-color: #d62957;
+    font-size: 14pt;
+    color: white;
+}
+
+
+
+
+/* Video */
+.linker{
+    text-decoration: none;
+    color: black !important;
+}
+
+.fade-enter-active, .fade-leave-active{
+    transition-duration: 0.75s;
+    transition-property: opacity;
+    transition-timing-function: ease
+}
+
+.fade-enter, .fade-leave{
+    opacity: 0;
+}

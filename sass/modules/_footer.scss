@@ -22,5 +22,20 @@ footer {
 			margin-right: 0.4em;
 			color: rgba(255, 255, 255, 0.3);
 		}
-	}
+    }
+    
+    #mainFooter{
+        background-color: #d62957;
+        padding: 3% 5%;
+     }
+     
+    #logo-footer p{
+         padding-top: 20px;
+    }
+     
+    #social-media img{
+         width:35px;
+         height: 35px;
+         margin-left: 8px;
+    }
 }
