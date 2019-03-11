@@ -7,7 +7,7 @@ export default{
                 <div class="col-sm-12">
                     <h1>You're on the Parent's home page right now!</h1>
                     
-                    <!-- <img :src="'../images/' + retriveMedia.movies_cover" alt="imgage">-->
+                    <img :src="'../images/' + retriveMedia.movies_cover" alt="image">
                 </div>
             </div>
         </div>
@@ -32,20 +32,22 @@ export default{
             }
         },
         created: function(){
-            this.loadMedia(null, "video");
+            this.loadMedia("parents", "video");
         },
         methods:{
             loadMedia(filter, mediaType){
-                if(this.activeMediaType !== mediaType && mediaType !== null){
+                if(this.activeMediaType !== mediaType){
                     this.activeMediaType = mediaType;
                 }
             
 
-                let url = (filter == null) ? `./admin/scripts/index.php?media=${this.activeMediaType}` : `./admin/scripts/index.php?media=${this.activeMediaType}&&filter=${filter}`;
-
+                let url = `./admin/scripts/index.php?media=${mediaType}&&filter=${filter}`;
                 fetch(url)
                     .then(res => res.json())
-                    .then(data => {this.retriveMedia = data;})
+                    .then(data => {
+                        this.retriveMedia = data[0];
+                        this.currentMediaDetails = data[0];
+                    })
                     .catch(function(error){
                         console.error(error);
                     });

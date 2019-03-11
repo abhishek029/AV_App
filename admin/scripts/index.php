@@ -3,6 +3,7 @@
 
     if(isset($_GET['media'])){
         $type = $_GET['media'];
+        $filter = $_GET['filter'];
 
         if($type == "video"){
             $tbl = "tbl_movies";
@@ -10,8 +11,7 @@
             $tbl = "tbl_audio";
         }
     }
-
-    $results = getAll($tbl);
+    $results = getAll($tbl,$filter);
 
     echo json_encode($results);
 ?>
