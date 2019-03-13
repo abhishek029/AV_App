@@ -4,17 +4,24 @@ export default{
     template:`
     <div class="container">
             
-        <div class="row">            
-            <div class="col-sm-12">
+        <div class="row">           
 
-                <ul class="nav media-genres">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" @click="loadMedia('guest','audio')">AUDIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" @click="loadMedia('guest','video')">VIDEO</a>
-                    </li>                    
-                </ul> 
+            <nav class="col">
+                <ul class="nav menu">
+                        <li class="nav-item">
+                            <router-link :to="{ path: 'users'}" class="nav-item nav-link">HOME</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" @click="loadMedia('guest','audio')">AUDIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" @click="loadMedia('guest','video')">VIDEO</a>
+                        </li>                      
+                        <li class="nav-item" v-on:click="logout()">
+                            <i class="fas fa-power-off"></i>
+                        </li>                 
+                    </ul>      
+            </nav>  
 
                 <div v-if="activeMediaType == 'video' && retriveMedia.length > 0" class="row">
                     <div class="col-sm-12">
@@ -23,7 +30,7 @@ export default{
 
                     <img v-for="media in retriveMedia" @click="switchMedia(media)" class="col-2 img-circle" :src="'./images/video/' + media.movies_cover" alt="image">
                 </div>
-            </div>
+            <
 
             <div v-if="activeMediaType == 'audio' && retriveMedia.length > 0" class="row">
                     <div class="col-sm-3">

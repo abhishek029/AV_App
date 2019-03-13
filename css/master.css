@@ -4,3 +4,18 @@
     background: white;
     color: black;
 }
+.menu{
+    margin-top: 40px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    transition: .2s;
+}
+a:hover{
+    color: rgba(3, 20, 247, 0.829);
+}
+
+img:hover{
+    cursor: pointer;
+}

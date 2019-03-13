@@ -15,15 +15,14 @@
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
-  <main id="app" class="container-fluid">
+  <main id="app" class="container-fluid">    
     <div class="row">
       <header class="col-sm-12">
-          <span><a href="index.html">ROKU</a></span>
-        
-        
+        <h1>
+          <router-link :to="{ path: 'login'}" class="nav-item nav-link">ROKU</router-link>      
+        </h1>
       </header>
-    </div>  
-    
+    </div> 
 
     <div class="row">
       <div class="col-sm-12">

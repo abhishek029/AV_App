@@ -3,32 +3,27 @@ export default{
 
     template:`
     <div class="container">
-    <nav class="float-right">
-    <ul>
-      <!-- <li>Kids</li> -->      
-        <li><router-link :to="{ path: 'users'}" class="nav-item nav-link" >
-          <button type="button" class="btn home btn-default btn-sm">
-            <span class="glyphicon glyphicon-home"></span> Home
-          </button>
-        </router-link></li>
-      <!-- <li v-if="authenticated"><i class="fas fa-user-circle"></i></li> -->
-      <!-- <li v-if="administrator"><i class="fas fa-cog"></i></li> -->
-      <li v-on:click="logout()"><i class="fas fa-power-off"></i></li>
-      
-    </ul>
-  </nav>
-  
-    <div class="row">            
-        <div class="col-sm-12">
+    
+    
+    <div class="row">   
+        <nav class="col">
+            <ul class="nav menu">
+                    <li class="nav-item">
+                        <router-link :to="{ path: 'users'}" class="nav-item nav-link">HOME</router-link>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click="loadMedia('parents','audio')">AUDIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click="loadMedia('parents','video')">VIDEO</a>
+                    </li>                    
+                    <li class="nav-item" v-on:click="logout()">
+                        <i class="fas fa-power-off"></i>
+                    </li>                 
+                </ul>      
+        </nav> 
 
-            <ul class="nav media-genres">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" @click="loadMedia('parents','audio')">AUDIO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" @click="loadMedia('parents','video')">VIDEO</a>
-                </li>                    
-            </ul> 
+        <div class="col-sm-12"> 
 
             <div v-if="activeMediaType == 'video' && retriveMedia.length > 0" class="row">
                 <div class="col-sm-12">

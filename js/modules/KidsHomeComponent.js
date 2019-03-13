@@ -5,14 +5,22 @@ export default{
     <div class="container">
             
         <div class="row"> 
-            <ul class="nav media-genres">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" @click="loadMedia('kids','audio')">AUDIO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" @click="loadMedia('kids','video')">VIDEO</a>
-                </li>                    
-            </ul>            
+            <nav class="col">
+                <ul class="nav menu">
+                        <li class="nav-item">
+                            <router-link :to="{ path: 'users'}" class="nav-item nav-link">HOME</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" @click="loadMedia('kids','audio')">AUDIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" @click="loadMedia('kids','video')">VIDEO</a>
+                        </li>                      
+                        <li class="nav-item" v-on:click="logout()">
+                            <i class="fas fa-power-off"></i>
+                        </li>                 
+                    </ul>      
+            </nav>           
             
             <div v-if="activeMediaType == 'video' && retriveMedia.length > 0" class="row">
                 <div class="col-sm-12">
