@@ -2,15 +2,43 @@ export default{
     props: ['currentuser'],
 
     template:`
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>You're on the Guest's home page and we don't have anything for you right now!</h1>
-                    
-                    <img :src="'../images/' + retriveMedia.movies_cover" alt="image">
+    <div class="container">
+            
+        <div class="row">            
+            <div class="col-sm-12">
+
+                <ul class="nav media-genres">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click="loadMedia('guest','audio')">AUDIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" @click="loadMedia('guest','video')">VIDEO</a>
+                    </li>                    
+                </ul> 
+
+                <div v-if="activeMediaType == 'video' && retriveMedia.length > 0" class="row">
+                    <div class="col-sm-12">
+                        <video autoplay controls muted :src="'video/'+currentMediaDetails.movies_trailer" class="fs-video col"></video>
+                    </div>                
+
+                    <img v-for="media in retriveMedia" @click="switchMedia(media)" class="col-2 img-circle" :src="'./images/video/' + media.movies_cover" alt="image">
                 </div>
             </div>
+
+            <div v-if="activeMediaType == 'audio' && retriveMedia.length > 0" class="row">
+                    <div class="col-sm-3">
+                        <img class="col-sm-12" :src="'images/audio/' + currentMediaDetails.audio_cover" alt="audio">
+                    </div>
+                    <div class="col-sm-9">
+                        <h3>{{currentMediaDetails.audio_title}}({{currentMediaDetails.audio_year}})</h3>
+                        <p>{{currentMediaDetails.audio_storyline}}</p>
+                        <audio class="col-12" autoplay controls :src="'audio/' + currentMediaDetails.audio_src"/>
+                    </div>
+
+                    <img v-for="media in retriveMedia" @click="switchMedia(media)" class="col-2 img-circle" :src="'./images/audio/' + media.audio_cover" alt="image">
+            </div>
         </div>
+    </div>
     `,
 
     data(){
@@ -35,8 +63,11 @@ export default{
             this.loadMedia("guest", "video");
         },
         methods:{
+            switchMedia(media){
+                this.currentMediaDetails = media;
+            },
             loadMedia(filter, mediaType){
-                if(this.activeMediaType !== mediaType){
+                if(this.activeMediaType !== mediaType && mediaType != null){
                     this.activeMediaType = mediaType;
                 }
             

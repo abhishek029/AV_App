@@ -3,6 +3,8 @@ export default {
 
     template: `
         <div class="col-xs-12 col-am-6 col-md-4 mx-auto">
+    
+
             <div class="card rounded" @click="navToUserHome(liveuser.access)">
                 <div class="card-body text-center">
                  <!-- <pre>{{ liveuser }}</pre>   -->
