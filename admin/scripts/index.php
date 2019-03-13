@@ -7,11 +7,13 @@
 
         if($type == "video"){
             $tbl = "tbl_movies";
-        }else{
+            $col = "movies_audience";
+        }else if($type == "audio"){
             $tbl = "tbl_audio";
+            $col = "audio_audience";
         }
     }
-    $results = getAll($tbl,$filter);
+    $results = getAll($tbl,$filter,$col);
 
     echo json_encode($results);
 ?>

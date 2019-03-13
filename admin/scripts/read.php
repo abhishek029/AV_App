@@ -1,11 +1,11 @@
 <?php 
 
-function getAll($tbl,$filter){
+function getAll($tbl,$filter,$col){
 	include('connect.php');
 
 	//TODO: fill the following variable with a SQL query
 	// that fetching all info from the given table $tbl
-	$queryAll = 'SELECT * FROM '.$tbl.' WHERE movies_audience = "'.$filter.'"';
+	$queryAll = 'SELECT * FROM '.$tbl.' WHERE '.$col.' = "'.$filter.'"';
 
 	$runAll = $pdo->query($queryAll);
 

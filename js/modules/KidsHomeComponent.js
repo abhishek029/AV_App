@@ -4,19 +4,39 @@ export default{
     template:`
     <div class="container">
             
-    <div class="row">            
-        <div class="col-sm-12">
-            <div>
-                <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer" class="fs-video col"></video>
-            </div>
+        <div class="row"> 
+            <ul class="nav media-genres">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" @click="loadMedia('kids','audio')">AUDIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" @click="loadMedia('kids','video')">VIDEO</a>
+                </li>                    
+            </ul>            
             
-            <h1>You're on the Guest's home page and we don't have anything for you right now!</h1>
-                
-            <img v-for="media in retriveMedia" @click="switchMedia(media)" class="col-2 img-circle" :src="'./images/video/' + media.movies_cover" alt="image">
+            <div v-if="activeMediaType == 'video' && retriveMedia.length > 0" class="row">
+                <div class="col-sm-12">
+                    <video autoplay controls muted :src="'video/'+currentMediaDetails.movies_trailer" class="fs-video col"></video>
+                </div>                
+
+                <img v-for="media in retriveMedia" @click="switchMedia(media)" class="col-2 img-circle" :src="'./images/video/' + media.movies_cover" alt="image">
+            </div>
+
+            <div v-if="activeMediaType == 'audio' && retriveMedia.length > 0" class="row">
+                <div  class="col-sm-3">
+                    <img :src="'images/audio/' + currentMediaDetails.audio_cover" alt="audio">
+                </div>
+                <div class="col-sm-9">
+                    <h3>{{currentMediaDetails.audio_title}}</h3>
+                    <p>{{currentMediaDetails.audio_storyline}}</p>
+                    <audio autoplay controls :src="'audio/' + currentMediaDetails.audio_src"/>
+                </div>
+
+                <img v-for="media in retriveMedia" @click="switchMedia(media)" class="col-2 img-circle" :src="'./images/audio/' + media.audio_cover" alt="image">
+            </div>
+
         </div>
     </div>
-    </div>
-
     `,
 
     data(){
@@ -41,8 +61,11 @@ export default{
             this.loadMedia("kids", "video");
         },
         methods:{
+            switchMedia(media){
+                this.currentMediaDetails = media;
+            },
             loadMedia(filter, mediaType){
-                if(this.activeMediaType !== mediaType){
+                if(this.activeMediaType !== mediaType && mediaType != null){
                     this.activeMediaType = mediaType;
                 }
             
