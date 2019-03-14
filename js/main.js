@@ -21,8 +21,6 @@ const vm = new Vue({
     data:{
         testmessage: "sup",
 
-        authenticated: false,
-
         mockAccount:{
             username: "abc",
             password: "123"
@@ -39,7 +37,6 @@ const vm = new Vue({
         logout(){
             this.$router.push({ path: "/login" });
             
-            // this.authenticated = false;
 
         }
     },

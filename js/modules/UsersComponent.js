@@ -4,8 +4,10 @@ export default{
     template: `
     <div class="container">
         <div class="row" id="login">
-            <div class="col-sm-12">
-                <h1 class="text-center">{{message}}</h1>
+        
+            <div class="col-sm-12">   
+                <img class="col-4 text-center logo" src="images/logo.png" alt="logo">         
+                <h1 class="text-left">{{message}}</h1>
             </div>
             
             <user v-for="(user, index) in userList" :liveuser="user" :key="index"></user>
@@ -18,7 +20,7 @@ export default{
 
     data(){
         return{
-            message: "Select your Role",
+            message: "Select your Role:",
 
             userList: []
         }

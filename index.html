@@ -16,13 +16,13 @@
 </head>
 <body>
   <main id="app" class="container-fluid">    
-    <div class="row">
+    <!-- <div class="row">
       <header class="col-sm-12">
         <h1>
           <router-link :to="{ path: 'login'}" class="nav-item nav-link">ROKU</router-link>      
         </h1>
       </header>
-    </div> 
+    </div>  -->
 
     <div class="row">
       <div class="col-sm-12">
@@ -31,17 +31,25 @@
     </div>
   </main>
 
-  <footer>
-    <p class="copy">
-      &copy; 2018 The Awesome Company, Inc
-    </p>
+  <footer class="row">
+    <div class="col-12">
+      <img class="col-4 logo" src="images/logo-footer.png" alt="logo">
+    </div>
+    <div class="col-12">
+      <p class="col-6 copy">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique sequi nihil minus voluptate deleniti, eius ipsam in dicta itaque amet deserunt repellendus ex culpa non quos iure iste ad officiis.
+      </p>
 
-    <ul class="float-right">
-      <li><i class="fab fa-facebook"></i></li>
-      <li><i class="fab fa-twitter-square"></i></li>
-      <li><i class="fab fa-google-plus-square"></i></li>
-      <li><i class="fab fa-instagram"></i></li>
-    </ul>
+      <ul class="col-6 float-right">
+          <li>Follow me: </li>
+          <li><i class="fab fa-facebook"></i></li>
+          <li><i class="fab fa-twitter-square"></i></li>
+          <li><i class="fab fa-google-plus-square"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+        </ul>
+    </div>
+
+    
   </footer>
   <script type="module" src="js/main.js"></script>
 </body>

@@ -6,18 +6,21 @@ export default{
     
     
     <div class="row">   
-        <nav class="col">
-            <ul class="nav menu">
-                    <li class="nav-item">
+        <nav class="">
+            <ul class="row nav menu">
+                    <li class="col-4 nav-item">
+                        <img class="col logo" src="images/logo.png" alt="logo">
+                    </li>
+                    <li class="col-2 nav-item">
                         <router-link :to="{ path: 'users'}" class="nav-item nav-link">HOME</router-link>
                     </li>
-                    <li class="nav-item">
+                    <li class="col-2 nav-item">
                         <a class="nav-link" href="#" @click="loadMedia('parents','audio')">AUDIO</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="col-2 nav-item">
                         <a class="nav-link" href="#" @click="loadMedia('parents','video')">VIDEO</a>
                     </li>                    
-                    <li class="nav-item" v-on:click="logout()">
+                    <li class="col-2 nav-item" v-on:click="logout()">
                         <i class="fas fa-power-off"></i>
                     </li>                 
                 </ul>      
@@ -26,11 +29,19 @@ export default{
         <div class="col-sm-12"> 
 
             <div v-if="activeMediaType == 'video' && retriveMedia.length > 0" class="row">
-                <div class="col-sm-12">
-                    <video autoplay controls muted :src="'video/'+currentMediaDetails.movies_trailer" class="fs-video col"></video>
-                </div>                
+                <div class="col-sm-3">
+                    <h3>{{currentMediaDetails.movies_title}}({{currentMediaDetails.movies_year}})</h3>
+                    <p>{{currentMediaDetails.movies_storyline}}</p>
+                </div>
 
-                <img v-for="media in retriveMedia" @click="switchMedia(media)" class="col-2 img-circle" :src="'./images/video/' + media.movies_cover" alt="image">
+                <div class="col-sm-9">
+                    <video autoplay controls muted :src="'video/'+currentMediaDetails.movies_trailer" class="fs-video col"></video>
+                </div>   
+                <h2 class="col-sm-12 moreList">More Video: </h2>             
+                <div v-for="media in retriveMedia" class="col-3 listItems">
+                    <img @click="switchMedia(media)"  :src="'./images/video/' + media.movies_cover" alt="image">
+                    <h3 class="text-center">{{media.movies_title}}</h3>
+                </div>
             </div>
         </div>
 
@@ -43,8 +54,11 @@ export default{
                     <p>{{currentMediaDetails.audio_storyline}}</p>
                     <audio class="col-12" autoplay controls :src="'audio/' + currentMediaDetails.audio_src"/>
                 </div>
-
-                <img v-for="media in retriveMedia" @click="switchMedia(media)" class="col-2 img-circle" :src="'./images/audio/' + media.audio_cover" alt="image">
+                <h2 class="col-sm-12 moreList">More Audio: </h2>   
+                <div v-for="media in retriveMedia" class="col-3 listItems">
+                    <img @click="switchMedia(media)" class="col-12"  :src="'./images/audio/' + media.audio_cover" alt="image">
+                    <h3 class="text-center">{{media.audio_title}}</h3>
+                </div>
         </div>
     </div>
 </div>
