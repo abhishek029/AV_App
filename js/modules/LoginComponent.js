@@ -70,6 +70,12 @@ export default{
                 
             }
 
+        },
+
+        logout(){
+            this.$router.push({ path: "/login" });
+            
+
         }
     }
 

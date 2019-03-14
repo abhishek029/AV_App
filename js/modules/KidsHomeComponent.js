@@ -34,7 +34,7 @@ export default{
                         </div>
 
                         <div class="col-sm-9">
-                            <video autoplay controls muted :src="'video/'+currentMediaDetails.movies_trailer" class="fs-video col"></video>
+                            <iframe autoplay controls muted :src="currentMediaDetails.movies_trailer" class="fs-video col"></iframe>                       
                         </div>   
                         <h2 class="col-sm-12 moreList">More Video: </h2>             
                         <div v-for="media in retriveMedia" class="col-3 listItems">
@@ -107,6 +107,12 @@ export default{
                     .catch(function(error){
                         console.error(error);
                     });
+            },
+            
+            logout(){
+                this.$router.push({ path: "/login" });
+                
+    
             }
         }
     
