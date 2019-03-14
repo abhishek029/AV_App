@@ -3,3 +3,34 @@
 @import 'modules/_usercomponent';
 @import 'modules/_footer';
 @import 'modules/_login';
+
+.container{
+    margin-bottom: 150px;
+}
+.home{
+    background: white;
+    color: black;
+}
+.menu{
+    margin-top: 40px;
+}
+.logo{
+    height: 150px;
+    padding: 25px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    transition: .2s;
+}
+a:hover{
+    color: $login-button;
+}
+
+img{
+    height: 300px;
+    transition: .2s;
+}
+img:hover{
+    cursor: pointer;
+}

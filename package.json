@@ -12,5 +12,13 @@
     "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^4.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhishek029/Patel_Abhishek_Han_Ly_AV_App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abhishek029/Patel_Abhishek_Han_Ly_AV_App/issues"
+  },
+  "homepage": "https://github.com/abhishek029/Patel_Abhishek_Han_Ly_AV_App#readme"
 }
