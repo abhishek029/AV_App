@@ -4,9 +4,18 @@ export default{
     template: `
     <div class="container">
         <div class="row" id="login">
-        
-            <div class="col-sm-12">   
-                <img class="col-4 text-center logo" src="images/logo.png" alt="logo">         
+        <nav class="">
+        <ul class="row nav menu">
+                <li class="col-4 nav-item">
+                    <img class="col logo" src="images/logo.png" alt="logo">
+                </li>
+                                
+                <li class="col-2 nav-item" v-on:click="logout()">
+                    <i class="fas fa-power-off"></i>
+                </li>                 
+            </ul>      
+    </nav>   
+            <div class="col-sm-12">        
                 <h1 class="text-left">{{message}}</h1>
             </div>
             
@@ -36,6 +45,12 @@ export default{
             .catch(function(error){
                 console.error(error);
             });
+        },
+
+        logout(){
+            this.$router.push({ path: "/login" });
+            
+
         }
     },
 

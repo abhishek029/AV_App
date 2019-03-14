@@ -106,6 +106,12 @@ export default{
                     .catch(function(error){
                         console.error(error);
                     });
+            },
+
+            logout(){
+                this.$router.push({ path: "/login" });
+                
+    
             }
         }
     

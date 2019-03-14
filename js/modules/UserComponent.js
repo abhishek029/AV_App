@@ -34,6 +34,12 @@ export default {
                 console.log("Guest cannot access");
                 this.$router.push({ name: "home", params: { currentuser: this.liveuser}});
             }
+        },
+
+        logout(){
+            this.$router.push({ path: "/login" });
+            
+
         }
     }
 }
