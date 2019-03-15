@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 14, 2019 at 10:53 PM
+-- Generation Time: Mar 15, 2019 at 12:03 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.8
 
@@ -126,8 +126,8 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `user_admin`, `user_access`, `user_avatar`) VALUES
 (1, 'Abhi Patel (PARENT)', 'parent', 'parent', 'patelabhi@gmail.com', '2019-02-01 19:07:35', '::1', 1, 5, 'parent.jpg'),
-(2, 'Sid (KID)', 'kid', 'kid', 'sid@gmail.com', '2019-02-01 20:11:28', '::1', 1, 4, 'parent.jpg'),
-(3, 'Guest', 'guest', 'guest', 'guestuser@gmail.com', '2019-02-01 20:12:40', '::1', 0, 1, 'temp_avatar.jpg');
+(2, 'Sid (KID)', 'kid', 'kid', 'sid@gmail.com', '2019-02-01 20:11:28', '::1', 1, 4, 'kids.jpg'),
+(3, 'Guest', 'guest', 'guest', 'guestuser@gmail.com', '2019-02-01 20:12:40', '::1', 0, 1, 'guest.jpg');
 
 --
 -- Indexes for dumped tables
